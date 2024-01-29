@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="grid grid-cols-4 gap-4 mb-5">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-5 mx-3 ">
       <div @click="$router.push(`/${item.id}`)" class="card" v-for="item of product" :key="item.id">
         <h4>{{ item.title }}</h4>
         <img :src="item.image" alt="">
@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     async Product() {
-      let res = await axios.get(`https://fakestoreapi.com/products`)
+      let res = await axios.get(`http://fakestoreapi.com/products`)
       if (res.status == 200) {
         this.product = [...res.data];
       }
@@ -39,7 +39,8 @@ export default {
 
 <style>
 .container {
-  width: 1200px !important;
+  max-width: 1200px !important;
+  width: 100%;
   margin: auto;
 }
 
