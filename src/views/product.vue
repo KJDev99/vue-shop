@@ -41,14 +41,14 @@ export default {
     },
     methods: {
         async getElementById() {
-            let res = await axios.get(`http://fakestoreapi.com/products/${this.id}`)
+            let res = await axios.get(`https://fakestoreapi.com/products/${this.id}`)
             if (res.status == 200) {
                 this.element = { ...res.data };
                 this.anotherProduct()
             }
         },
         async anotherProduct() {
-            let res = await axios.get(`http://fakestoreapi.com/products/category/${this.element.category}`)
+            let res = await axios.get(`https://fakestoreapi.com/products/category/${this.element.category}`)
             if (res.status == 200) {
 
                 this.another = res.data.filter(el => el.id != this.id)

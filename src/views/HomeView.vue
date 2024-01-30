@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     async Product() {
-      let res = await axios.get(`http://fakestoreapi.com/products`)
+      let res = await axios.get(`https://fakestoreapi.com/products`)
       if (res.status == 200) {
         this.product = [...res.data];
       }
